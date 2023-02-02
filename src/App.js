@@ -1,23 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+function MyButton() {
+  function handleClick(){
+    alert("button was clicked");
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <button onClick={handleClick}>
+      I'm a button
+    </button>
+  );
+}
+
+
+function App() {
+  const user = {
+    name: 'Raymond',
+    imageUrl: 'https://www.preemptive.com/wp-content/uploads/2020/10/hacker-1200x639.png',
+    imageSize: 90,
+  };
+
+  const products = [
+    { title: 'Cabbage', isFruit: false, id: 1 },
+    { title: 'Garlic', isFruit: false, id: 2 },
+    { title: 'Apple', isFruit: true, id: 3 },
+  ];
+
+  return (
+    <div className='App'>
+    <h1>Hello, <p style={ {backgroundColor: "red"} }>{user.name}</p>!</h1>
+    <h1>Hello {user.name}</h1>
+    <MyButton></MyButton>
+    <h2>peepee</h2>
+    <img src= {user.imageUrl} />
     </div>
   );
 }
